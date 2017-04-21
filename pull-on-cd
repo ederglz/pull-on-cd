@@ -1,0 +1,7 @@
+shopt -s nullglob dotglob
+cd() {
+	builtin cd "$@"
+	if [ -d .git ]; then
+		git pull
+	fi
+}
